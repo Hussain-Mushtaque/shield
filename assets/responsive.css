@@ -1,0 +1,131 @@
+/* Mobile-first responsive tuning. Loaded after styles.css so these win on small screens. */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body,
+#top {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+  .text-display {
+    line-height: 0.96;
+  }
+}
+
+/* Phones (below Tailwind's sm breakpoint) */
+@media (max-width: 639.98px) {
+  /* Fluid display headings so nothing overflows on narrow screens */
+  .text-\[3\.2rem\] {
+    font-size: clamp(2.35rem, 11vw, 3.2rem);
+    line-height: 1;
+  }
+  .text-8xl {
+    font-size: clamp(2.6rem, 12.5vw, 3.75rem);
+    line-height: 1;
+  }
+  .text-7xl {
+    font-size: clamp(2.3rem, 10.5vw, 3rem);
+    line-height: 1;
+  }
+  .text-6xl {
+    font-size: clamp(2.25rem, 10vw, 3.4rem);
+    line-height: 1.02;
+  }
+  .text-5xl {
+    font-size: clamp(2rem, 9vw, 2.85rem);
+    line-height: 1.04;
+  }
+  .text-4xl {
+    font-size: clamp(1.6rem, 7vw, 2.1rem);
+  }
+  .text-3xl {
+    font-size: clamp(1.4rem, 6.2vw, 1.8rem);
+  }
+  .text-2xl {
+    font-size: clamp(1.2rem, 5.4vw, 1.5rem);
+  }
+  .text-xl {
+    font-size: clamp(1.05rem, 4.6vw, 1.25rem);
+  }
+
+  /* Keep long words from breaking the layout */
+  h1,
+  h2,
+  h3 {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Tighter section rhythm on phones */
+  .py-24 {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+  }
+  .py-20 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .px-6 {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .gap-12 {
+    gap: 2.25rem;
+  }
+
+  /* Hero photo: shorter, friendlier crop on phones */
+  .h-\[58vh\] {
+    height: 42vh;
+    min-height: 260px;
+  }
+
+  /* Center the hero logo block and cap its size */
+  .max-w-\[280px\] {
+    max-width: 200px;
+  }
+
+  /* Stat numbers shouldn't dominate the screen */
+  .grid-cols-2 .font-display {
+    font-size: clamp(1.6rem, 8vw, 2.25rem);
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .text-\[3\.2rem\] {
+    font-size: clamp(2rem, 10.5vw, 2.6rem);
+  }
+  .text-8xl {
+    font-size: clamp(2.2rem, 11.5vw, 3rem);
+  }
+  .px-6 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .max-w-\[280px\] {
+    max-width: 160px;
+  }
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none !important;
+  }
+  .animate-\[float_7s_ease-in-out_infinite\],
+  .animate-\[pulse_5s_ease-in-out_infinite\],
+  .animate-\[scroll_45s_linear_infinite\] {
+    animation: none !important;
+  }
+}
