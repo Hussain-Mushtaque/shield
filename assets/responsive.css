@@ -38,6 +38,13 @@ img {
   .hero-col-logo .max-w-\[280px\] {
     max-width: 180px;
   }
+  /* Center the "Building the Kingdom's future, with discipline." block on stacked layouts */
+  .hero-col-main {
+    text-align: center;
+  }
+  .hero-col-main .flex-wrap {
+    justify-content: center;
+  }
 }
 
 /* Phones (below Tailwind's sm breakpoint) */
